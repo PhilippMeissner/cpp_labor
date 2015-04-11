@@ -1,0 +1,17 @@
+Variablen nach Initialisierung:
+Variable 1:	53
+Variable 2:	71
+Variable 3:	16
+
+Variablen in 'Addiere':
+106
+142
+32
+
+Summe von 'Addiere (return)': 140
+
+Variablen nach 'Addiere':
+Variable 1:	53
+Variable 2:	142
+Variable 3:	32
+
