@@ -1,0 +1,10 @@
+Man erkennt, dass durch das Übergeben der Adresse und Referenz an die
+Addiere-Funktion die lokalen Variablen aus der Main-Funktion überschrieben
+werden.
+
+Lediglich die lokale Variable 'var1' wird nicht überschrieben, da keine
+Referenz, sondern nur der Wert an die Addiere-Funktion übergeben wird.
+
+Wichtig war in der gesamten Aufgabe, die notwendigen Variablen zu
+dereferenzieren, um nicht nur eine Adresse, sondern auch einen Wert zu
+bekommen beziehungsweise die richtigen Variablen zu überschreiben/übergeben.
