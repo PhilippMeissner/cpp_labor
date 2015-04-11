@@ -1,0 +1,37 @@
+INT:	4Bytes
+FLOAT:	4Bytes
+DOUBLE:	8Bytes
+CHAR:	1Bytes
+BOOL:	1Bytes
+Student:32Bytes
+
+ID:		1
+Name:		Friedrich
+Studiengang:	BWL
+Note:		2
+Bestanden:	1
+
+ID:		2
+Name:		Christian
+Studiengang:	VWL
+Note:		3.4
+Bestanden:	1
+
+ID:		3
+Name:		Carina
+Studiengang:	KoDe
+Note:		1
+Bestanden:	1
+
+ID:		4
+Name:		Karl
+Studiengang:	INI
+Note:		4.7
+Bestanden:	0
+
+ID:		5
+Name:		Peter
+Studiengang:	TMM
+Note:		2.3
+Bestanden:	1
+
