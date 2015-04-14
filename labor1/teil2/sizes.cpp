@@ -12,6 +12,8 @@ struct student {
   float note;
   bool bestanden;
 
+  // Standardconstructor
+  student(){};
   // Constructor
   student (int i, string na, string sg, float no, bool b) : id(i), name(na), studiengang(sg), note(no), bestanden(b) {}
 
@@ -42,8 +44,20 @@ int main () {
   }
 
   // Manually created students
-  struct student karl(4, "Karl", "INI", 4.7, false);
-  struct student peter(5, "Peter", "TMM", 2.3, true);
+  //struct student peter(5, "Peter", "TMM", 2.3, true);
+  struct student karl, peter;
+  karl.id = 4;
+  karl.name = "Karl";
+  karl.studiengang = "INI";
+  karl.note = 4.7;
+  karl.bestanden = false;
+
+  peter.id = 5;
+  peter.name = "Peter";
+  peter.studiengang = "TMM";
+  peter.note = 2.3;
+  peter.bestanden = true;
+
 
   // Print information about students
   karl.showStudent();
