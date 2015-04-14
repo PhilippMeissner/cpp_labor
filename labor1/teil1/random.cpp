@@ -45,7 +45,7 @@ int main () {
       cout << "Maximum:\t\t" << maxi << endl;
       cout << "Mittelwert:\t\t" << mw << endl << endl;
     } else {
-      cout << "Die erste Zufallszahl war bereits klein genug, um die Schleife zu unterbrechen." << endl << endl;
+      cout << "Die erste Zufallszahl war bereits groß genug, um die Schleife zu unterbrechen." << endl << endl;
 
     }
  }
