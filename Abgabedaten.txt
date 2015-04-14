@@ -1,0 +1,10 @@
+#Tutor: Eric Gabriel
+
+* Schriftlich
+** Laborgruppennummer
+** Teamnummer
+** Namen
+** Nummer Aufgabenblatt
+
+* Digital
+** Eric Gabriel - Abgabeverzeichnis
