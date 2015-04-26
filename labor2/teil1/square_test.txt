@@ -1,0 +1,2 @@
+Square of 2.5: 6.25
+Square of (5, 7): 144
