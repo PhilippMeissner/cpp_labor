@@ -1,6 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
 using namespace std;
 
 struct complex {
@@ -13,8 +11,6 @@ float square(float x);
 complex square(complex c);
 
 int main () {
-  // initialize random-seed
-  srand(time(NULL));
   complex c;
   c.real = 5;
   c.imag = 7;
