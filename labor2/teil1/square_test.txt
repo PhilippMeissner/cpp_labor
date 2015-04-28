@@ -1,2 +1,4 @@
 Square of 2.5: 6.25
-Square of (5, 7): 144
+Square of (5, 7):
+Real:		216
+Imaginär:	90

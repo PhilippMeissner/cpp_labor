@@ -10,7 +10,7 @@ struct complex {
 
 // Prototypes
 float square(float x);
-float square(complex c);
+complex square(complex c);
 
 int main () {
   // initialize random-seed
@@ -18,9 +18,12 @@ int main () {
   complex c;
   c.real = 5;
   c.imag = 7;
+  c = square(c);
 
   cout << "Square of 2.5: " << square(2.5) << endl;
-  cout << "Square of (5, 7): " << square(c) << endl;
+  cout << "Square of (5, 7):" << endl;
+  cout << "Real:\t\t" << c.real << endl;
+  cout << "Imaginär:\t" << c.imag << endl;
 
   return 0;
 }
@@ -32,7 +35,10 @@ float square(float x) {
 }
 
 // Returns the ² of a complex number
-float square(complex c) {
-  // TODO: Check if calculation is correct
-  return (c.real + c.imag) * (c.real + c.imag);
+complex square(complex c) {
+  complex res;
+  res.real = (c.real * c.real) - (c.imag * c.imag);
+  res.imag = (2 * c.real * c.imag);
+
+  return res;
 }
