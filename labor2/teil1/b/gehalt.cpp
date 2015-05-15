@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-float gehalt(float stunden, float lohn = 7.5, float p = 0.33);
+void gehalt(float stunden, float lohn = 7.5, float p = 0.33);
 
 int main () {
   float hours, lohn, prozent;
@@ -29,12 +29,13 @@ int main () {
 }
 
 
-float gehalt(float stunden, float lohn, float p) {
-  p *= 100;
-
+void gehalt(float stunden, float lohn, float p) {
+  float netto, abgabe;
   cout << endl << "Stunden: " << stunden << endl;
   cout << "Lohn: " << lohn << endl;
   cout << "Prozente: " << p << endl;
   // TODO: Calculation
-  return 1.0;
+  abgabe = (stunden * lohn) * p;
+  netto = (stunden * lohn) - abgabe;
+  cout <<  "Nettgehalt: " << netto << endl;
 }

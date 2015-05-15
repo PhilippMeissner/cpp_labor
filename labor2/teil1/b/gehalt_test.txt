@@ -1,0 +1,27 @@
+./gehalt
+  Geben Sie die Stundenanzahl ein: 12
+  Standardwerte übernehmen?
+  [1] Ja
+  [0] Nein
+  1
+
+  Stunden: 12
+  Lohn: 7.5
+  Prozente: 0.33
+  Nettgehalt: 60.3
+
+=================================================
+./gehalt
+  Geben Sie die Stundenanzahl ein: 13
+  Standardwerte übernehmen?
+  [1] Ja
+  [0] Nein
+  0
+  Lohn: 10
+  Prozente: 0.5
+
+  Stunden: 13
+  Lohn: 10
+  Prozente: 0.5
+  Nettgehalt: 65
+
