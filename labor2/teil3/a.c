@@ -30,5 +30,8 @@ int main() {
   // Ergebnisse ausgeben
   printf("Max: %lf\nMin: %lf\nSumme: %lf\n", max, min, sum);
 
+  // Speicher freigeben
+  free(pNum);
+
   return 0;
 }
