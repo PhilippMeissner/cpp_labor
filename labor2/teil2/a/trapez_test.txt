@@ -1,0 +1,8 @@
+Trapez
+[1] 9.35994
+Para
+[2] 6.80723
+Rechteck
+[3] 8
+Quadrat
+[4] 4
