@@ -34,7 +34,7 @@ void gehalt(float stunden, float lohn, float p) {
   cout << endl << "Stunden: " << stunden << endl;
   cout << "Lohn: " << lohn << endl;
   cout << "Prozente: " << p << endl;
-  // TODO: Calculation
+
   abgabe = (stunden * lohn) * p;
   netto = (stunden * lohn) - abgabe;
   cout <<  "Nettgehalt: " << netto << endl;
