@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
   int n, i;
-  double min = 0, max = 0, curr, sum = 0, *pNum;
+  double pos = 0, max = 0, curr, sum = 0, *pNum;
 
   // n einlesen
   cout << "Wie viele Elemente sollen erzeugt werden? ";
@@ -18,18 +18,19 @@ int main() {
     cin >> curr;
 
     // Zahl speichern
-    *(pNum + i) = curr;
+    pNum[i] = curr;
 
     // Min/Max validieren
-    if(i == 0) min = curr;
-    if(curr > max) max = curr;
-    if(curr < min) min = curr;
+    if(curr > max) {
+      max = curr;
+      pos = i;
+    }
     // Summe errechnen
     sum += curr;
   }
 
   // Ergebnisse ausgeben
-  cout << "Max: " << max << endl << "Min: " << min << endl << "Summe: " << sum << endl;
+  cout << "Max: " << max << endl << "Pos: " << pos << endl << "Summe: " << sum << endl;
   delete[] pNum;
 
   return 0;

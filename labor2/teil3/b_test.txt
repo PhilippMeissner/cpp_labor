@@ -1,0 +1,12 @@
+Wie viele Elemente sollen erzeugt werden? 5
+
+Es werden 5 Elemente erzeugt.
+[0] eingeben: 1.0
+[1] eingeben: 2
+[2] eingeben: 3
+[3] eingeben: 4
+[4] eingeben: 5.9
+Max: 5.9
+Pos: 4
+Summe: 15.9
+

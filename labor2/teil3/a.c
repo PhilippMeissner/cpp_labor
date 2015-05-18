@@ -3,7 +3,7 @@
 
 int main() {
   int n, i;
-  double min = 0, max = 0, curr, sum = 0, *pNum;
+  double pos = 0, max = 0, curr, sum = 0, *pNum;
 
   printf("Wie viele Elemente sollen erzeugt werden?  ");
   scanf("%d", &n);
@@ -21,14 +21,15 @@ int main() {
     *(pNum + i) = curr;
 
     // Min/Max validieren
-    if(i == 0) min = curr;
-    if(curr > max) max = curr;
-    if(curr < min) min = curr;
+    if(curr > max) {
+      pos = i;
+      max = curr;
+    }
     // Summe errechnen
     sum += curr;
   }
   // Ergebnisse ausgeben
-  printf("Max: %lf\nMin: %lf\nSumme: %lf\n", max, min, sum);
+  printf("Max: %lf\nPos: %lf\nSumme: %lf\n", max, pos, sum);
 
   // Speicher freigeben
   free(pNum);
