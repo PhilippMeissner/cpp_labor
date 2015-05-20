@@ -1,0 +1,14 @@
+Dateityp int:
+3 gefunden in Position 3
+5 gefunden in Position 5
+12 gefunden in Position -1
+
+Dateityp long:
+1 gefunden in Position 1
+6 gefunden in Position 6
+12 gefunden in Position -1
+
+Dateityp double:
+0.3 gefunden in Position 4
+0.6 gefunden in Position 7
+1.2 gefunden in Position -1
