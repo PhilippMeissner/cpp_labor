@@ -29,7 +29,5 @@ int main () {
 		Auto();
 	}
 	int penis = 30;
-        cout << "Test yo" << endl;
-  
-        return 0;
+	int lala = 1;
 }
