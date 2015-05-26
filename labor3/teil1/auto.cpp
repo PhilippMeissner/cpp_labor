@@ -19,6 +19,7 @@ class Auto {
 			this->fabrikat = fabrikat;
 		}
 		
+		void print
 };
 
 int Auto::anzahl = 0;
@@ -27,4 +28,5 @@ int main () {
 	for (int i = 0; i < 4; i++) {
 		Auto();
 	}
+	int penis = 30;
 }
