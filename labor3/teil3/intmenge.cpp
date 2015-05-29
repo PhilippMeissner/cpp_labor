@@ -5,15 +5,24 @@ using namespace std;
 IntMenge::IntMenge() {}
 
 void IntMenge::hinzufuegen(int el) {
-
+    if(!(istMitglied(el))) {
+        cout << "Kann rein." << endl;
+    } else {
+        cout << "Element exists already." << endl;
+    }
 }
 void IntMenge::entfernen(int el) {}
-bool IntMenge::istMitglied(int el) {}
-int IntMenge::size() {}
-void IntMenge::anzeigen() {}
+bool IntMenge::istMitglied(int el) const{
+    for(int i = 0; i < vec.size; i++) {
+        if (vec[i] == el) return true;
+    }
+    return false;
+}
+int IntMenge::size() const{}
+void IntMenge::anzeigen() const{}
 void IntMenge::loeschen() {}
-int IntMenge::getMax() {}
-int IntMenge::getMin() {}
+int IntMenge::getMax() const{}
+int IntMenge::getMin() const{}
 
 
 // Private:

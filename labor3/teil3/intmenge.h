@@ -5,12 +5,12 @@ class IntMenge {
     IntMenge();
     void hinzufuegen(int el);
     void entfernen(int el);
-    bool istMitglied(int el);
-    int size();
-    void anzeigen();
+    bool istMitglied(int el) const;
+    int size() const;
+    void anzeigen() const;
     void loeschen();
-    int getMax();
-    int getMin();
+    int getMax() const;
+    int getMin() const;
   private:
     vector<int> vec;
     int finden(int el);
