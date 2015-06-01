@@ -1,0 +1,63 @@
+Anzahl der Autos: 2
+[1] Standardkonstruktor
+[2] Standardkonstruktor
+
+========== Eingabe =========
+[Auto 1]
+Wählen Sie die Leistung: 123
+Wahlen Sie das Fabrikat: qwe
+
+[Auto 2]
+Wählen Sie die Leistung: 312
+Wahlen Sie das Fabrikat: ewq
+
+============================
+========== Ausgabe =========
+
+[Auto 1]
+Leistung: 123
+Fabrikat: ewq
+[Auto 2]
+Leistung: 312
+Fabrikat: ewq
+
+============================
+============ 2. ============
+
+[3] Überladener Konstruktor
+[4] Überladener Konstruktor
+[5] Überladener Konstruktor
+============================
+========== Ausgabe =========
+[Auto(INIT) 1]
+Leistung: 10
+Fabrikat: Porsche
+
+[Auto(INIT) 2]
+Leistung: 11
+Fabrikat: Seat
+
+[Auto(INIT) 3]
+Leistung: 12
+Fabrikat: Audi
+
+============================
+========= Kontrolle ========
+[Auto(INIT) 1]
+Leistung: 10
+Fabrikat: Volkswagen
+
+[Auto(INIT) 2]
+Leistung: 11
+Fabrikat: Volkswagen
+
+[Auto(INIT) 3]
+Leistung: 12
+Fabrikat: Volkswagen
+
+[4] Destruktor
+[3] Destruktor
+[2] Destruktor
+[1] Destruktor
+[0] Destruktor
+
