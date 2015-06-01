@@ -18,9 +18,10 @@ class Auto {
       cout << "Destruktor" << endl;
     }
 
-    Auto(int iLeistung) {
+    Auto(int iLeistung, char* fab) {
       raiseAnzahl();
       leistung = iLeistung;
+      fabrikat = fab;
       cout << "Überladener Konstruktor" << endl;
     }
 
@@ -35,7 +36,8 @@ class Auto {
     }
 
     void print() {
-      cout << "Leistung: " << this->leistung << endl;
+      cout << "Leistung: " << leistung << endl;
+      cout << "Fabrikat: " << fabrikat << endl;
     }
 
     static int getAnzahl() {
@@ -46,7 +48,8 @@ class Auto {
       leistung = lei;
     }
 
-    void setFabrikat() {
+    void setFabrikat(char* fab) {
+      fabrikat = fab;
     }
 };
 
@@ -55,6 +58,7 @@ int Auto::anzahl = 0;
 
 int main() {
   int n, lei;
+  string fab;
   cout << "Anzahl der Autos: ";
   cin >> n;
   Auto *car = new Auto[n];
@@ -65,7 +69,12 @@ int main() {
     cout << "[Auto " << i+1 << "]" << endl;
     cout << "Wählen Sie die Leistung: ";
     cin >> lei;
+    cout << "Wahlen Sie das Fabrikat: ";
+    // Ignore trailing newline
+    cin.ignore();
+    getline(cin, fab);
     car[i].setLeistung(lei);
+    car[i].setFabrikat((char *)fab.c_str());
     cout << endl;
   }
 
@@ -81,13 +90,25 @@ int main() {
   cout << endl << "============================" << endl;
   cout << "============ 2. ============" << endl << endl;
 
-  Auto second_car[] = {Auto(10), Auto(11), Auto(12)};
+  Auto second_car[] = {Auto(10,(char *)"Porsche"), Auto(11,(char *)"Seat"), Auto(12,(char *)"Audi")};
   cout << "============================" << endl;
   cout << "========== Ausgabe =========" << endl;
 
-  for(int i = 0; i < 4; i++) {
+  for(int i = 0; i < 3; i++) {
     cout << "[Auto(INIT) " << i+1 << "]" << endl;
-    cout << "Kontrolle:" << endl;
+    second_car[i].print();
+    cout << endl;
+  }
+
+  cout << "============================" << endl;
+  cout << "========= Kontrolle ========" << endl;
+
+  for(int i = 0; i < 3; i++) {
+    second_car[i].setFabrikat((char *)"Volkswagen");
+  }
+
+  for(int i = 0; i < 3; i++) {
+    cout << "[Auto(INIT) " << i+1 << "]" << endl;
     second_car[i].print();
     cout << endl;
   }
