@@ -24,7 +24,7 @@ class Zeile {
 
     // Destruktor
     ~Zeile() {
-      delete[] z;
+      delete[] this->z;
     }
 
     // Indexoperator [] ist (in zwei Versionen) bereits implementiert für die Klasse Zeile
@@ -47,19 +47,22 @@ class Matrix {
   public:
     // Overloaded constructor
     Matrix( int _nrows , int _ncols) {
+      nrows = _nrows;
+      ncols = _ncols;
       mat = new Zeile*[_nrows];
       for(int i = 0; i < _nrows; i++) {
-        mat[i] = new Zeile[_ncols];
+        mat[i] = new Zeile(_ncols);
       }
     }
 
     // Overloaded constructor
     Matrix( int z, int s, int wert) {
+      nrows = z;
+      ncols = s;
       mat = new Zeile*[z];
       for(int i = 0; i < z; i++) {
+      	mat[i] = new Zeile(ncols);
         for(int j = 0; j < s; j++) {
-          // *mat[i]      --> Pointer to value in row i
-          // (*mat[i])[j] --> Value in row i at col j
           (*mat[i])[j] = wert;
         }
       }
@@ -71,7 +74,7 @@ class Matrix {
       ncols = m.getCols();
       mat = new Zeile*[nrows];
       for(int i = 0; i < nrows; i++) {
-        mat[i] = new Zeile[ncols];
+        mat[i] = new Zeile(ncols);
         for(int j = 0; j < ncols; j++) {
           (*mat[i])[j] = m[i][j];
         }
@@ -89,14 +92,10 @@ class Matrix {
 
     // Zuweisungsoperator für tiefe Kopie
     Matrix& operator=( const Matrix& ma ) {
-      if(this->nrows != ma.getRows() || this->ncols != ma.getCols()) {
-        cout << "Matrizen sind unterschiedlich groß!" << endl;
-        break;
-      }
-
+      assert(this->nrows == ma.getRows() || this->ncols == ma.getCols());
       for(int i = 0; i < nrows; i++) {
         for(int j = 0; j < ncols; j++) {
-          (*mat[i])[j] = m[i][j];
+          (*mat[i])[j] = ma[i][j];
         }
       }
     }
@@ -107,22 +106,21 @@ class Matrix {
     // Indexoperator [] (in zwei Versionen) für die Klasse Matrix
     inline Zeile& operator[](int i) {
       assert(i >= 0 && i < nrows );
-      return mat[i];
+      return *mat[i];
     }
 
     inline const Zeile& operator[](int i) const {
       assert(i >= 0 && i < nrows );
-      return mat[i];
+      return *mat[i];
     }
 
     // Transponierte der Matrix
     Matrix transpose() {
-      Matrix m1;
-      m1.mat = new Zeile*[ncols];
+      Matrix m1(ncols, nrows);
+      
       for(int i = 0; i < ncols; i++) {
-        m1[i] = new Zeile[nrows];
         for(int j = 0; j < nrows; j++) {
-          m1[i][j] = *this[j][i];
+          m1[i][j] = (*mat[j])[i];
         }
       }
       return m1;
@@ -138,10 +136,9 @@ class Matrix {
 
 // zwei globale Operatorfunktionen für Addition und Multiplikation
 Matrix operator+(const Matrix& ma, const Matrix& mb) {
-  Matrix mc;
-  mc.mat = new Zeile*[ma.getRows()];
+  Matrix mc(ma.getRows(), ma.getCols());
+
   for(int i = 0; i < ma.getRows(); i++) {
-    mc[i] = new Zeile[ma.getCols()];
     for(int j = 0; j < ma.getCols(); j++) {
       mc[i][j] = ma[i][j] + mb[i][j];
     }
@@ -150,14 +147,12 @@ Matrix operator+(const Matrix& ma, const Matrix& mb) {
 }
 
 Matrix operator*(const Matrix& ma, const Matrix& mb) {
-  Matrix mc;
-  mc.mat = new Zeile*[ma.getRows()];
+  Matrix mc(ma.nrows, mb.ncols);
+  
   for(int i = 0; i < ma.getRows(); i++) {
-    mc[i] = new Zeile[mb.getCols()];
     for(int j = 0; j < mb.getCols(); j++) {
-      mc[i][j] = 0;
       for (int k = 0; k < ma.getCols(); k++) {
-        mc[i][j] += (ma[i][k] + mb[k][j]);
+        mc[i][j] += (ma[i][k] * mb[k][j]);
       }
     }
   }
@@ -172,6 +167,7 @@ std::ostream& operator<<(std::ostream& os, const Matrix& m) {
     }
     os << endl;
   }
+  return os;
 }
 
 #endif
