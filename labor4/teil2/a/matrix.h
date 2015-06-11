@@ -44,6 +44,7 @@ class Matrix {
     Zeile **mat; // Zeiger auf "Zeilen"-Vektor
     int nrows, ncols; // Zeilen- und Spaltenzahl
 
+  public:
     // Overloaded constructor
     Matrix( int _nrows , int _ncols) {
       mat = new Zeile*[_nrows];
