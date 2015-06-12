@@ -147,7 +147,7 @@ Matrix operator+(const Matrix& ma, const Matrix& mb) {
 }
 
 Matrix operator*(const Matrix& ma, const Matrix& mb) {
-  Matrix mc(ma.nrows, mb.ncols);
+  Matrix mc(ma.nrows, mb.ncols, 0);
 
   for(int i = 0; i < ma.getRows(); i++) {
     for(int j = 0; j < mb.getCols(); j++) {
