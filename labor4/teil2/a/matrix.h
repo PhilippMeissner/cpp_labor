@@ -117,7 +117,7 @@ class Matrix {
     // Transponierte der Matrix
     Matrix transpose() {
       Matrix m1(ncols, nrows);
-      
+
       for(int i = 0; i < ncols; i++) {
         for(int j = 0; j < nrows; j++) {
           m1[i][j] = (*mat[j])[i];
@@ -148,7 +148,7 @@ Matrix operator+(const Matrix& ma, const Matrix& mb) {
 
 Matrix operator*(const Matrix& ma, const Matrix& mb) {
   Matrix mc(ma.nrows, mb.ncols);
-  
+
   for(int i = 0; i < ma.getRows(); i++) {
     for(int j = 0; j < mb.getCols(); j++) {
       for (int k = 0; k < ma.getCols(); k++) {
