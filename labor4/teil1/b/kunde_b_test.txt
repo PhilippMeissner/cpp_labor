@@ -1,0 +1,8 @@
+Dagobert aus Entenhausen (ID = 1, 50 Jahre) hatte 2 Einkaeufe und 7000 Euro Umsatz.
+gesamte Anzahl Einkaeufe: 2
+gesamte Anzahl Einkaeufe: 2
+Willi aus Berlin (ID = 2, 60 Jahre) hatte 3 Einkaeufe und 140 Euro Umsatz.
+gesamte Anzahl Einkaeufe: 5
+gesamte Anzahl Einkaeufe: 5
+zurueck in main
+gesamte Anzahl Einkaeufe: 5

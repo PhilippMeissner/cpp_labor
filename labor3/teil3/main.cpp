@@ -60,5 +60,6 @@ int main() {
     }
     menge.loeschen();
 
+	system("pause");
     return 0;
 }

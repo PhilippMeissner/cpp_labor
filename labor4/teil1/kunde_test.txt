@@ -1,0 +1,17 @@
+Dagobert aus Entenhausen (ID = 1, 50 Jahre) hatte 2 Einkaeufe und 7000 Euro Umsatz.
+gesamte Anzahl Einkaeufe: 2
+Id von Kunde k2: 1
+Dagobert aus Entenhausen (ID = 1, 50 Jahre) hatte 2 Einkaeufe und 7000 Euro Umsatz.
+gesamte Anzahl Einkaeufe: 2
+Willi aus Berlin (ID = 2, 60 Jahre) hatte 3 Einkaeufe und 140 Euro Umsatz.
+gesamte Anzahl Einkaeufe: 5
+Willi aus Berlin (ID = 2, 60 Jahre) hatte 3 Einkaeufe und 140 Euro Umsatz.
+gesamte Anzahl Einkaeufe: 5
+Beginn test
+Sherlock aus Paris (ID = 3, 66 Jahre) hatte 2 Einkaeufe und 2250 Euro Umsatz.
+gesamte Anzahl Einkaeufe: 7
+Dagobert aus Entenhausen (ID = 1, 50 Jahre) hatte 3 Einkaeufe und 7080 Euro Umsatz.
+gesamte Anzahl Einkaeufe: 8
+Ende test
+zurueck in main
+gesamte Anzahl Einkaeufe: 8

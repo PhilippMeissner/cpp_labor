@@ -19,6 +19,6 @@ int main () {
 	
 	ptr->move(3, 11);					// void value not ignored as it ought to be
 	cout << ptr->print();				// Works all fine
-	
+	system("pause");
 	return 0;
 }
