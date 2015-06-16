@@ -7,20 +7,19 @@
 
 using namespace std;
 
-class Vector
-{
-	int* v;
-	int anzahl;
-	public:
-	Vector(int anzahl = 10);
-	Vector( const Vector& vec ); // Kopierkonstruktor
-	~Vector();
-	friend bool kleiner( const int& a, const int& b );
-	int min() const;
-	int getAnzahl() const;
-	int operator[]( const int i ) const;
-	void setVector( int* sv, int sanzahl);
-	friend ostream& operator<< ( ostream& os, const Vector& v );
+template <class T>
+class Vector {
+  private:
+    T* v;
+    int anzahl;
+  public:
+    Vector<T>(int anzahl = 10);
+    Vector<T>( const Vector<T>& vec ); // Kopierkonstruktor
+    ~Vector<T>();
+    T min() const;
+    int getAnzahl() const;
+    T operator[]( const int i ) const;
+    void setVector( T* sv, int sanzahl);
 };
 
 #endif

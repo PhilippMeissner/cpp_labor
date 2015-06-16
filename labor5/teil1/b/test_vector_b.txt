@@ -1,0 +1,24 @@
+Integer Template Test:
+v1: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+v2: 0, 1, 2, 3, 4, 5, 6, 7, 
+Minimum von v2: 0
+v3: 0, 1, 2, 3, 4, 5, 6, 7, 
+Anzahl von v3: 8
+2 ist kleiner als 5
+v4: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+v4 nach set: 10, 5, 2, 3, 
+Minimum von v4: 2
+Anzahl von v4: 4
+
+
+Double Template Test:
+v5: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+v6: 0, 1, 2, 3, 4, 5, 6, 7, 
+Minimum von v6: 0
+v7: 0, 1, 2, 3, 4, 5, 6, 7, 
+Anzahl von v7: 8
+2 ist kleiner als 5
+v8: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+v8 nach set: 10, 5, 2, 3, 
+Minimum von v8: 2
+Anzahl von v8: 4
