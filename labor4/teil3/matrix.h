@@ -43,7 +43,7 @@ class Zeile {
 template <class T>
 class Matrix {
   private:
-    T **mat; // Zeiger auf "Zeilen"-Vektor
+    Zeile<T> **mat; // Zeiger auf "Zeilen"-Vektor
     int nrows, ncols; // Zeilen- und Spaltenzahl
 
   public:
@@ -51,9 +51,9 @@ class Matrix {
     Matrix( int _nrows , int _ncols) {
       nrows = _nrows;
       ncols = _ncols;
-      mat = new T*[_nrows];
+      mat = new Zeile<T>*[_nrows];
       for(int i = 0; i < _nrows; i++) {
-        mat[i] = new T [_ncols];
+        mat[i] = new Zeile<T>(_ncols);
       }
     }
 
@@ -61,9 +61,9 @@ class Matrix {
     Matrix( int z, int s, T wert) {
       nrows = z;
       ncols = s;
-      mat = new T*[z];
+      mat = new Zeile<T>*[z];
       for(int i = 0; i < z; i++) {
-      	mat[i] = new T(ncols);
+      	mat[i] = new Zeile<T>(ncols);
         for(int j = 0; j < s; j++) {
           (*mat[i])[j] = wert;
         }
@@ -71,12 +71,12 @@ class Matrix {
     }
 
     // Copy constructor
-    Matrix( const Matrix &m) {
+    Matrix( const Matrix<T> &m) {
       nrows = m.getRows();
       ncols = m.getCols();
-      mat = new T*[nrows];
+      mat = new Zeile<T>*[nrows];
       for(int i = 0; i < nrows; i++) {
-        mat[i] = new T(ncols);
+        mat[i] = new Zeile<T>(ncols);
         for(int j = 0; j < ncols; j++) {
           (*mat[i])[j] = m[i][j];
         }
@@ -93,7 +93,7 @@ class Matrix {
     }
 
     // Zuweisungsoperator für tiefe Kopie
-    Matrix& operator=( const Matrix& ma ) {
+    Matrix<T>& operator=( const Matrix<T>& ma ) {
       assert(this->nrows == ma.getRows() || this->ncols == ma.getCols());
       for(int i = 0; i < nrows; i++) {
         for(int j = 0; j < ncols; j++) {
@@ -106,38 +106,31 @@ class Matrix {
     int getCols() const { return ncols; }
 
     // Indexoperator [] (in zwei Versionen) für die Klasse Matrix
-    inline T& operator[](int i) {
+    inline Zeile<T>& operator[](int i) {
       assert(i >= 0 && i < nrows );
-      return (T) *mat[i];
+      return *mat[i];
     }
 
-    inline const T& operator[](int i) const {
+    inline const Zeile<T>& operator[](int i) const {
       assert(i >= 0 && i < nrows );
-      return (T) *mat[i];
+      return *mat[i];
     }
 
     // Transponierte der Matrix
-    Matrix transpose() {
-      Matrix m1(ncols, nrows);
+    Matrix<T> transpose() {
+      Matrix<T> m1(ncols, nrows);
 
       for(int i = 0; i < ncols; i++) {
         for(int j = 0; j < nrows; j++) {
-          m1[i][j] = (T) (*mat[j])[i];
+          m1[i][j] = (*mat[j])[i];
         }
       }
       return m1;
     }
-
-    // Ausgabefunktion, i.e. print() oder operator<<
-    //void print();
-    friend std::ostream& operator<<(std::ostream& os, const Matrix& m);
-
-    friend Matrix operator+(const Matrix& ma, const Matrix& mb);
-    friend Matrix operator*(const Matrix& ma, const Matrix& mb);
 };
 
-// zwei globale Operatorfunktionen für Addition und Multiplikation
 template <class T>
+// zwei globale Operatorfunktionen für Addition und Multiplikation
 Matrix<T> operator+(const Matrix<T>& ma, const Matrix<T>& mb) {
   Matrix<T> mc(ma.getRows(), ma.getCols());
 
@@ -151,7 +144,7 @@ Matrix<T> operator+(const Matrix<T>& ma, const Matrix<T>& mb) {
 
 template <class T>
 Matrix<T> operator*(const Matrix<T>& ma, const Matrix<T>& mb) {
-  Matrix<T> mc(ma.nrows, mb.ncols, 0);
+  Matrix<T> mc(ma.getRows(), mb.getCols(), 0);
 
   for(int i = 0; i < ma.getRows(); i++) {
     for(int j = 0; j < mb.getCols(); j++) {
