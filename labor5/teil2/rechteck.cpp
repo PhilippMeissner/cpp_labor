@@ -2,6 +2,8 @@
 #include "rechteck.h"
 using namespace std;
 
+Rechteck::Rechteck(double db, double dh, double dx, double dy) : b(db), h(dh), Form::Form(dx, dy) {}
+
 void Rechteck::dehnen(double fx, double fy) {
   b *= fx;
   h *= fy;
