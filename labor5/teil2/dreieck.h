@@ -4,16 +4,18 @@
 using namespace std;
 
 class Dreieck {
+  protected:
+    Form a, b, c;
   public:
     Dreieck(double ax, double ay, double bx, double by, double cx, double cy) : a(ax, ay), b(bx, by), c(cx, cy) {}
 
-    Dreieck::verschieben(double dx, double dy){
+    void verschieben(double dx, double dy){
       a.verschieben(dx, dy);
       b.verschieben(dx, dy);
       c.verschieben(dx, dy);
     }
 
-    Dreieck::ausgeben() {
+    void ausgeben() {
       cout << "A: ";
       a.ausgeben();
 
@@ -23,9 +25,6 @@ class Dreieck {
       cout << "C: ";
       c.ausgeben();
     }
-
-  protected:
-    Form a, b, c;
 };
 
 #endif

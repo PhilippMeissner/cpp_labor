@@ -11,7 +11,7 @@ class Form {
       y += dy;
     }
 
-    void Form::ausgeben() {
+    void ausgeben() {
       cout << "x: " << this->x << endl << "y: " << this->y << endl;
     }
 
