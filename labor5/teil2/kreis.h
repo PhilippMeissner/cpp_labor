@@ -1,5 +1,7 @@
+#ifndef KREIS_H
+#define KREIS_H
+
 #include "form.cpp"
-// class Klassenname :: Parent1, Parent2, ..
 class Kreis : public Form {
   protected:
     double r;
@@ -8,3 +10,5 @@ class Kreis : public Form {
     void aufblaehen(double f = 1);
     void ausgeben();
 };
+
+#endif
