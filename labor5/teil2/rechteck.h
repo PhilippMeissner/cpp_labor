@@ -13,7 +13,7 @@ class Rechteck : public Form {
       h *= fy;
     }
 
-    void ausgeben() {
+    virtual void ausgeben() {
       cout << "x: " << x << "\ty: " << y << "\tb: " << b << "\th: " << h << endl;
     }
 

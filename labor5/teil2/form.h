@@ -11,7 +11,7 @@ class Form {
       y += dy;
     }
 
-    void ausgeben() {
+    virtual void ausgeben() {
       cout << "x: " << this->x << "\ty: " << this->y << endl;
     }
 

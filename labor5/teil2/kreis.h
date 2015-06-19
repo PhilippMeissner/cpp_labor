@@ -9,7 +9,7 @@ class Kreis : public Form {
   public:
     Kreis(double dx, double dy, double dr) : Form::Form(dx, dy), r(dr) {}
     void aufblaehen(double f = 1) { r *= f; }
-    void ausgeben() {
+    virtual void ausgeben() {
       cout << "x: " << x << endl << "y: " << y << endl << "r: " << r << endl;
     }
 };
