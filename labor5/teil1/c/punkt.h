@@ -23,8 +23,8 @@ class Punkt {
     friend ostream& operator<< ( ostream& os, const Punkt& p );
 };
 
-inline Punkt::Punkt( float x0, float y0 ) : // TODO
-inline Punkt::Punkt( const Punkt& p ) : // TODO
+inline Punkt::Punkt( float x0, float y0 ) : x(x0), y(y0) {};
+inline Punkt::Punkt( const Punkt& p ) : x(p.getX()), y(p.getY()) {};
 inline Punkt::~Punkt() {}
 inline void Punkt::setX( float x0 ) { this->x = x0; }
 inline void Punkt::setY( float y0 ) { this->y = y0; }
