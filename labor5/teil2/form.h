@@ -12,7 +12,7 @@ class Form {
     }
 
     void ausgeben() {
-      cout << "x: " << this->x << endl << "y: " << this->y << endl;
+      cout << "x: " << this->x << "\ty: " << this->y << endl;
     }
 
   protected:

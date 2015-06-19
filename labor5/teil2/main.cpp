@@ -40,5 +40,17 @@ int main() {
   r.ausgeben();
   d.ausgeben();
 
+
+  // Field
+  cout <<  endl << "Felder: " << endl;
+  Form* field[3];
+  field[0] = new Form(2, 3);
+  field[1] = new Kreis(3, 3, 2);
+  field[2] = new Rechteck(3, 3, 2, 2);
+
+  for(int i = 0; i < 3; i++) {
+    field[i]->ausgeben();
+  }
+
   return 0;
 }

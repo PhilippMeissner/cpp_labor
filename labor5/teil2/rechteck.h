@@ -14,7 +14,7 @@ class Rechteck : public Form {
     }
 
     void ausgeben() {
-      cout << "x: " << x << endl << "y: " << y << endl << "b: " << b << endl << "h: " << h << endl;
+      cout << "x: " << x << "\ty: " << y << "\tb: " << b << "\th: " << h << endl;
     }
 
   protected:
