@@ -1,12 +1,12 @@
 #ifndef KREIS_H
 #define KREIS_H
 
-#include "form.cpp"
+//#include "form.cpp"
 class Kreis : public Form {
   protected:
     double r;
   public:
-    Kreis(double dx = 0, double dy = 0, double dr = 0);
+    Kreis(double dx, double dy, double dr) : Form::Form(dx, dy), r(dr) {}
     void aufblaehen(double f = 1);
     void ausgeben();
 };

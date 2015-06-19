@@ -2,7 +2,6 @@
 #include "dreieck.h"
 using namespace std;
 
-Dreieck::Dreieck(double ax, double ay, double bx, double by, double cx, double cy) : a(ax, ay), b(bx, by), c(cx, cy) {}
 
 void Dreieck::verschieben(double dx, double dy){
   a.verschieben(dx, dy);

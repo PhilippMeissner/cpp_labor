@@ -3,7 +3,7 @@
 
 class Form {
   public:
-    Form(double x0 = 0, double y0 = 0);
+    Form(double x0, double y0) : x(x0), y(y0) {}
     void verschieben(double dx, double dy);
     void ausgeben();
   protected:

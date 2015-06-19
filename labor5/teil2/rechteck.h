@@ -1,10 +1,10 @@
 #ifndef RECHTECK_H
 #define RECHTECK_H
 
-#include "form.cpp"
+//#include "form.cpp"
 class Rechteck : public Form {
   public:
-    Rechteck(double db = 0, double dh = 0, double dx = 0, double dy = 0);
+    Rechteck(double db, double dh, double dx, double dy) : b(db), h(dh), Form::Form(dx, dy) {}
     void dehnen(double fx = 1, double fy = 1);
     void ausgeben();
   protected:

@@ -2,8 +2,6 @@
 #include "kreis.h"
 using namespace std;
 
-Kreis::Kreis(double dx, double dy, double dr) : Form::Form(dx, dy), r(dr) {}
-
 void Kreis::aufblaehen(double f) {
   r *= f;
 }
