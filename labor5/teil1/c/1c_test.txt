@@ -1,0 +1,4 @@
+Entweder muss der Vergleichsoperator '<' überladen und entsprechend ergänzt
+werden, oder bei einem Zugriff auf 'v[i]' weiter auf den 'x' bzw. 'y' Wert
+referenziert werden.
+
