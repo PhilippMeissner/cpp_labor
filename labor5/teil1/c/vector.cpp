@@ -29,14 +29,16 @@ Vector<T>::~Vector() {
 
 template <class T>
 bool kleiner( const T& a, const T& b ) {
-  return ( a < b );
+  return ( a.abstand00() < b.abstand00() );
+  //return ( a < b );
 }
 
 template <class T>
 T Vector<T>::min() const {
   T min = v[0];
   for ( int i = 1; i < anzahl; i++ ) {
-    if ( v[i] < min ) min = v[i];
+    if ( v[i].abstand00() < min.abstand00() ) min = v[i];
+    //if ( v[i] < min ) min = v[i];
   }
   return min;
 }
