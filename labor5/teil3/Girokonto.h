@@ -9,19 +9,19 @@ class Girokonto : public Konto {
       this->dispo = -2000;
     }
 
-    void ueberweisen(double wert, Girokonto* destgiro) {
+    void ueberweisen(double wert, Girokonto& destgiro) {
       // Actually this part needs a whole lot more security measures..But well..
       if( (this->saldo - wert) > this->dispo ) {
         // Send money to destination
-        destgiro->einzahlen(wert);
+        destgiro.einzahlen(wert);
         // Remove money from account
         this->abheben(wert);
-        cout << wert << "€ von [" << this->nummer << "] nach [" << destgiro->nummer << "] ueberwiesen" << endl;
+        cout << wert << "€ von [" << this->nummer << "] nach [" << destgiro.nummer << "] ueberwiesen" << endl;
       }
       cout << "Zu wenig Geld auf dem Konto! Ueberweisung fehlgeschlagen!" << endl;
     }
 
-    void abheben(double wert) {
+    virtual void abheben(float wert) {
       if ( (saldo - wert) > dispo ) {
         this->auszahlen(wert);
         cout << wert << "€ wurden von [" << this->nummer << "] abgehoben." << endl;
@@ -38,3 +38,4 @@ std::ostream& operator<< (std::ostream& os, Girokonto g) {
   os << "[" << g.nummer << "] hat einen Saldo von " << g.saldo;
   return os;
 }
+

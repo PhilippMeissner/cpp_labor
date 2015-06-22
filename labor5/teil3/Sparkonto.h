@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 class Sparkonto : public Konto {
   public:
     Sparkonto(double nummer) {
@@ -6,7 +9,7 @@ class Sparkonto : public Konto {
       this->zins = 1.85;
     }
 
-    void abheben(double wert) {
+    virtual void abheben(float wert) {
       if ( (saldo - wert) > 0 ) {
         saldo -= wert;
         cout << wert << "€ wurden von [" << this->nummer << "] abgehoben." << endl;
@@ -15,7 +18,8 @@ class Sparkonto : public Konto {
     }
 
     void jahresZinsenAddieren() {
-      saldo = (saldo * ZINS / 100);
+      this->einzahlen(saldo * zins / 100);
+      cout << (saldo * zins / 100) << "€ Zinsen wurden hinzugefuegt.";
     }
 
     friend std::ostream& operator<< (std::ostream& os, Sparkonto s);
@@ -28,3 +32,4 @@ std::ostream& operator<< (std::ostream& os, Sparkonto s) {
   os << "[" << s.nummer << "] hat einen Saldo von " << s.saldo;
   return os;
 }
+
