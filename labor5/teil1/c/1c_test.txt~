@@ -9,3 +9,4 @@ funktioniert sie nicht mehr für die primitiven Datentypen int bzw. den
 Datentyp double.
 
 Überlädt man lediglich den < Operator für den Datentyp Punkt, so funktionieren alle Funktionen weiter wie gewohnt auch für die primitiven Datentypen.
+
