@@ -7,7 +7,7 @@ template <class T>
 Vector<T>::Vector( int a ) : anzahl(a) {
   v = new T[a];
   for ( int i = 0; i < a; i++ ) {
-    v[i] = i;
+    v[i] = (T)i;
   }
 }
 
