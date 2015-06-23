@@ -1,3 +1,3 @@
 # Labor WiSe2015 bei Carsten Meyer
-### Developed by Philipp Meißner
-* tested and compiled under Linux Ubuntu 14.04
+### Programmiert von Philipp Meißner und Patrick Wels
+* getestet und kompiliert unter Linux Ubuntu 14.04, Windows 7/8.1
