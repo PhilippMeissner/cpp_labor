@@ -35,7 +35,7 @@ class Girokonto : public Konto {
 };
 
 std::ostream& operator<< (std::ostream& os, Girokonto g) {
-  os << "[" << g.nummer << "] hat einen Saldo von " << g.saldo;
+  os << "[" << g.nummer << "] hat einen Saldo von " << g.saldo << endl;
   return os;
 }
 

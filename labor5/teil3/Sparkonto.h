@@ -19,7 +19,7 @@ class Sparkonto : public Konto {
 
     void jahresZinsenAddieren() {
       this->einzahlen(saldo * zins / 100);
-      cout << (saldo * zins / 100) << "€ Zinsen wurden hinzugefuegt.";
+      cout << (saldo * zins / 100) << "€ Zinsen wurden hinzugefuegt." << endl;
     }
 
     friend std::ostream& operator<< (std::ostream& os, Sparkonto s);
@@ -29,7 +29,7 @@ class Sparkonto : public Konto {
 };
 
 std::ostream& operator<< (std::ostream& os, Sparkonto s) {
-  os << "[" << s.nummer << "] hat einen Saldo von " << s.saldo;
+  os << "[" << s.nummer << "] hat einen Saldo von " << s.saldo << endl;
   return os;
 }
 
